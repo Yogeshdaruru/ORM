@@ -35,7 +35,7 @@ class Bankloan(models.Model):
   email=models.EmailField()
    
 class BankloanAdmin(admin.ModelAdmin):
-  list_display=('name','accno','dob','mobno','email','loan amount')
+  list_display=('name','customer id','dob','mobno','email','loan amount')
  
 ```
 # OUTPUT
