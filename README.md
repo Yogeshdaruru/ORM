@@ -18,31 +18,28 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 # PROGRAM
-### models.py:
-```py
+```
+admin.py
+from django.contrib import admin
+from .models import Bankloan,BankloanAdmin
+admin.site.register(Bankloan,BankloanAdmin)
+
+models.py
 from django.db import models
 from django.contrib import admin
-#creat your modelsr=models.CharField(primary_key=True,max_lenght=20,help_text="referencenumber")
-    name=models.CharFiled(max_lenght=100)
-    age=models.IntegerFiled()
-    email=models.EmailFiled()
-    phonenumber=mopdels.IntegerFiled()
-
-    class StudentAdmin(admin.ModelAdmin):
-       list_display=('referencenumber','name','age','email','phonenumber')
-```
-### admin.py:
-```py
-class student (models.Model):
-    referencenumbe
-from django.contrib import admin
-from .models import student,StudentAdmin
-
-# Register your models here.
-admin.site.register(student,StudentAdmin)
+class Bankloan(models.Model):
+  name=models.CharField(max_length=100)
+  accno=models.IntegerField(primary_key="accno")
+  ifscno=models.IntegerField()
+  mobno=models.IntegerField()
+  email=models.EmailField()
+   
+class BankloanAdmin(admin.ModelAdmin):
+  list_display=('name','accno','ifscno','mobno','email')
+ 
 ```
 # OUTPUT
-![hdrdg5au](https://github.com/user-attachments/assets/4d912c6f-05df-412f-9793-c084a12dd630)
+![Screenshot (17)](https://github.com/user-attachments/assets/26399549-dfbc-49f8-bbee-c5d94cd8d88e)
 
 
 # RESULT
